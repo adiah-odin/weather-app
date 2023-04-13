@@ -8,6 +8,48 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="weather">
+      <div id="left">
+        <h1 id="weatherCondition"></h1>
+        <p id="location"></p>
+        <p id="date"></p>
+        <p id="time"></p>
+        <p id="temperature"></p>
+        <span id="weatherLogo"></span>
+        <form action="" id="cityForm">
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Search location"
+          />
+          <button type="submit">Go</button>
+        </form>
+      </div>
+      <div id="right">
+        <div id="feelsLike">
+          <div class="icon"></div>
+          <div class="label">Feels Like</div>
+          <div class="value"></div>
+        </div>
+        <div id="humidity">
+          <div class="icon"></div>
+          <div class="label">Humidity</div>
+          <div class="value"></div>
+        </div>
+        <!-- <div id="chanceRain">
+          <div class="icon"></div>
+          <div class="label"></div>
+          <div class="value"></div>
+        </div> -->
+        <div id="windSpeed">
+          <div class="icon"></div>
+          <div class="label">Wind Speed</div>
+          <div class="value"></div>
+        </div>
+      </div>
+    </div>
+    <div id="forecast"></div>
     <script src="index.js"></script>
   </body>
 </html>
