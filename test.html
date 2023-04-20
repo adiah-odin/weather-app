@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <input type="text" name="city" id="city" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weather"></div>
+
+    <script>
+      const getWeather = () => {
+        const city = document.getElementById("city").value;
+        const apiKey = "2135750e9ad547ec25fc49b96dee7fca";
+        const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
+
+        // const {
+        //   lat,
+        //   lon,
+        //   country,
+        // } = async () => {
+        //   const response = await fetch(geoUrl);
+        //   const data = await response.json();
+        //   const latitude = data.lat;
+        //   const longitude = data.lon;
+        //   const country = data.country;
+
+        //   return { latitude, longitude, country };
+        // };
+
+        // console.log(country);
+
+        fetch(geoUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const lat = data.lat;
+            const lon = data.lon;
+            const country = data.country;
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+            fetch(url)
+              .then((response) => response.json)
+              .then((data) => {
+                const temperature = data.main.temp;
+                const description = data.weather[0].description;
+                const weatherElement = document.getElementById("weather");
+                weatherElement.innerHTML = `Temperature: ${temperature}&deg;C<br>Description: ${description}`;
+              })
+              .catch((error) => console.error(error));
+          });
+
+        // fetch(url)
+        //   .then((response) => response.json())
+        //   .then((data) => {
+        //     const temperature = data.main.temp;
+        //     const description = data.weather[0].description;
+        //     const weatherElement = document.getElementById("weather");
+        //     weatherElement.innerHTML = `Temperature: ${temperature}&deg;C<br>Description: ${description}`;
+        //   })
+        //   .catch((error) => console.error(error));
+      };
+    </script>
+  </body>
+</html>

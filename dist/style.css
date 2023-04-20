@@ -54,6 +54,9 @@ body {
   font-size: var(--fs-400);
   font-weight: 400;
   background-color: var(--clr-light);
+  background-image: url(../assets/img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--clr-dark);
   line-height: 1.5;
   min-height: 100vh;
@@ -86,6 +89,20 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.weather {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.weather .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.data {
+  display: grid;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

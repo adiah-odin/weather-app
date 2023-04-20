@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <link rel="stylesheet" href="dist/style.css" />
   </head>
   <body>
-    <div id="weather">
-      <div id="left">
+    <div id="weather" class="weather">
+      <div id="left" class="left">
         <h1 id="weatherCondition"></h1>
         <p id="location"></p>
         <p id="date"></p>
@@ -26,26 +27,26 @@
           <button type="submit">Go</button>
         </form>
       </div>
-      <div id="right">
-        <div id="feelsLike">
-          <div class="icon"></div>
-          <div class="label">Feels Like</div>
-          <div class="value"></div>
+      <div id="right" class="right">
+        <div id="feelsLike" class="data data--feelsLike">
+          <div class="data__icon"></div>
+          <div class="data__label">Feels Like</div>
+          <div class="data__value"></div>
         </div>
-        <div id="humidity">
-          <div class="icon"></div>
-          <div class="label">Humidity</div>
-          <div class="value"></div>
+        <div id="humidity" class="data data--humidity">
+          <div class="data__icon"></div>
+          <div class="data__label">Humidity</div>
+          <div class="data__value"></div>
         </div>
         <!-- <div id="chanceRain">
           <div class="icon"></div>
           <div class="label"></div>
           <div class="value"></div>
         </div> -->
-        <div id="windSpeed">
-          <div class="icon"></div>
-          <div class="label">Wind Speed</div>
-          <div class="value"></div>
+        <div id="windSpeed" class="data data--windSpeed">
+          <div class="data__icon"></div>
+          <div class="data__label">Wind Speed</div>
+          <div class="data__value"></div>
         </div>
       </div>
     </div>

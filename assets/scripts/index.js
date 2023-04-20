@@ -135,13 +135,13 @@ const displayWeather = (data) => {
   const location = document.getElementById("location");
   location.innerHTML = `${weather.location.city}, ${weather.location.country}`;
 
-  const feelsLike = document.querySelector("#feelsLike .value");
+  const feelsLike = document.querySelector("#feelsLike .data__value");
   feelsLike.innerHTML = `${weather.weather.temperature.feelsLike.celsius}°C`;
 
-  const humidity = document.querySelector("#humidity .value");
+  const humidity = document.querySelector("#humidity .data__value");
   humidity.innerHTML = `${weather.weather.humidity}%`;
 
-  const windSpeed = document.querySelector("#windSpeed .value");
+  const windSpeed = document.querySelector("#windSpeed .data__value");
   windSpeed.innerHTML = `${weather.weather.wind.wind_kph}kph`;
 };
 
