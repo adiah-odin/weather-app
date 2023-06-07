@@ -4,7 +4,7 @@ const apiKey = "d405777b1ce44f4c8fc154934231004";
 //   const response = await fetch(url, {});
 // }
 
-const baseUrl = "http://api.weatherapi.com/v1";
+const baseUrl = "https://api.weatherapi.com/v1";
 
 // async function weather(url = "", data = {}) {
 //   const response = await fetch(url, {});
